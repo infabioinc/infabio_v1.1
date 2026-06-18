@@ -51,7 +51,7 @@ export default function Header() {
         </a>
 
         <nav className="hidden md:flex items-center gap-9 bg-surface/35 border border-indigo-500/5 rounded-full px-7 py-1.5 backdrop-blur-2xl shadow-[0_10px_30px_var(--glass-shadow)]">
-          {['About', 'Services', 'Industries', 'Case Studies', 'Insights'].map((item) => (
+          {['About', 'Services', 'Industries'].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase().replace(' ', '-')}`}
@@ -61,12 +61,32 @@ export default function Header() {
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-brandBlue to-brandOrange group-hover:w-full transition-all duration-300 rounded-full shadow-[0_0_10px_#6366f1]" />
             </a>
           ))}
+
+          <div className="relative py-1.5 group">
+            <a
+              href="#insights"
+              className="text-[11px] font-bold text-slate-300 hover:text-slate-50 transition-colors relative py-1.5 font-sans tracking-[0.14em] uppercase"
+            >
+              Insights
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-brandBlue to-brandOrange group-hover:w-full transition-all duration-300 rounded-full shadow-[0_0_10px_#6366f1]" />
+            </a>
+
+            <div className="absolute left-1/2 top-full z-50 mt-4 w-48 -translate-x-1/2 translate-y-2 rounded-2xl border border-indigo-500/10 bg-surface/80 p-2 opacity-0 shadow-[0_20px_50px_var(--glass-shadow)] backdrop-blur-2xl pointer-events-none transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto">
+              {['Case Studies', 'Insights', 'Blog', 'Reports'].map((dropdownItem) => (
+                <a
+                  key={dropdownItem}
+                  href={`#${dropdownItem.toLowerCase().replace(' ', '-')}`}
+                  className="block rounded-xl px-4 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-slate-300 transition-all duration-300 hover:bg-white/[0.04] hover:text-transparent hover:bg-clip-text hover:bg-brand-gradient font-sans"
+                >
+                  {dropdownItem}
+                </a>
+              ))}
+            </div>
+          </div>
         </nav>
 
         <div className="flex items-center gap-5">
-          <a href="#contact" className="hidden md:block text-xs font-bold uppercase tracking-[0.12em] text-slate-300 hover:text-brandOrange transition-colors">
-            Contact
-          </a>
+          
 
           {/* Theme Toggle Button */}
           <button
@@ -87,9 +107,10 @@ export default function Header() {
 
           <MagneticButton>
             <a
-              href="#contact"
-              className="hidden md:flex btn-primary text-[10px] font-black uppercase tracking-[0.12em] px-6 py-2 rounded-full shadow-[0_0_20px_rgba(99,102,241,0.25)] hover:shadow-[0_0_30px_rgba(99,102,241,0.4)]"
-            >
+  href="#contact"
+  className="hidden lg:inline-flex btn-primary whitespace-nowrap text-[9px] xl:text-[10px] 2xl:text-[11px] font-black uppercase tracking-[0.08em] xl:tracking-[0.12em] px-4 xl:px-6 py-2 rounded-full shadow-[0_0_20px_rgba(99,102,241,0.25)] hover:shadow-[0_0_30px_rgba(99,102,241,0.4)]"
+>
+  
               Maximize Results & Minimize Marketing Budget
             </a>
           </MagneticButton>
