@@ -21,9 +21,11 @@ function App() {
       <Difference />
       <Industries />
       <Services />
+      <div id="insights" className="scroll-mt-28" />
       <BigIdea />
       <Process />
       <Founders />
+      <div id="case-studies" className="scroll-mt-28" />
       <Results />
       <FounderMessage />
       <FinalCTA />

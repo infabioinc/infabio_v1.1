@@ -71,16 +71,22 @@ export default function Header() {
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-brandBlue to-brandOrange group-hover:w-full transition-all duration-300 rounded-full shadow-[0_0_10px_#6366f1]" />
             </a>
 
-            <div className="absolute left-1/2 top-full z-50 mt-4 w-48 -translate-x-1/2 translate-y-2 rounded-2xl border border-indigo-500/10 bg-surface/80 p-2 opacity-0 shadow-[0_20px_50px_var(--glass-shadow)] backdrop-blur-2xl pointer-events-none transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto">
-              {['Case Studies', 'Insights', 'Blog', 'Reports'].map((dropdownItem) => (
+            <div className="absolute left-1/2 top-full z-50 w-48 -translate-x-1/2 translate-y-2 pt-4 opacity-0 pointer-events-none transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto">
+              <div className="rounded-2xl border border-indigo-500/10 bg-surface/80 p-2 shadow-[0_20px_50px_var(--glass-shadow)] backdrop-blur-2xl">
+              {[
+                { label: 'Case Studies', href: '#case-studies' },
+                { label: 'Insights', href: '#insights' },
+                
+              ].map((dropdownItem) => (
                 <a
-                  key={dropdownItem}
-                  href={`#${dropdownItem.toLowerCase().replace(' ', '-')}`}
+                  key={dropdownItem.label}
+                  href={dropdownItem.href}
                   className="block rounded-xl px-4 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-slate-300 transition-all duration-300 hover:bg-white/[0.04] hover:text-transparent hover:bg-clip-text hover:bg-brand-gradient font-sans"
                 >
-                  {dropdownItem}
+                  {dropdownItem.label}
                 </a>
               ))}
+              </div>
             </div>
           </div>
         </nav>
