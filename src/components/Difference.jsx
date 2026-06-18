@@ -85,7 +85,7 @@ export default function Difference() {
             <p className="text-slate-300 text-lg leading-relaxed font-sans font-light">
               We hire skills and don't differentiate basis gender, age, or background — but our motto is{' '}
               <strong className="text-brandOrange font-black text-xl tracking-wider ml-1">
-                GO - GIRLS
+                GO - Women
               </strong>
             </p>
             <p className="text-slate-400 leading-relaxed text-sm md:text-base font-sans font-light">
