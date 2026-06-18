@@ -71,21 +71,43 @@ export default function Header() {
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-brandBlue to-brandOrange group-hover:w-full transition-all duration-300 rounded-full shadow-[0_0_10px_#6366f1]" />
             </a>
 
-            <div className="absolute left-1/2 top-full z-50 w-48 -translate-x-1/2 translate-y-2 pt-4 opacity-0 pointer-events-none transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto">
-              <div className="rounded-2xl border border-indigo-500/10 bg-surface/80 p-2 shadow-[0_20px_50px_var(--glass-shadow)] backdrop-blur-2xl">
-              {[
-                { label: 'Case Studies', href: '#case-studies' },
-                { label: 'Insights', href: '#insights' },
-                
-              ].map((dropdownItem) => (
-                <a
-                  key={dropdownItem.label}
-                  href={dropdownItem.href}
-                  className="block rounded-xl px-4 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-slate-300 transition-all duration-300 hover:bg-white/[0.04] hover:text-transparent hover:bg-clip-text hover:bg-brand-gradient font-sans"
-                >
-                  {dropdownItem.label}
-                </a>
-              ))}
+            <div className="absolute left-1/2 top-full z-50 w-[520px] max-w-[calc(100vw-3rem)] -translate-x-1/2 translate-y-2 pt-4 opacity-0 pointer-events-none transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto">
+              <div className="relative overflow-hidden rounded-2xl border border-indigo-500/10 bg-surface/85 p-3 shadow-[0_24px_70px_var(--glass-shadow)] backdrop-blur-2xl">
+                <div className="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-brandOrange/10 blur-3xl" />
+                <div className="absolute -bottom-16 -left-16 h-36 w-36 rounded-full bg-brandBlue/10 blur-3xl" />
+
+                <div className="relative grid grid-cols-[1fr_1.35fr] gap-3">
+                  <div className="rounded-2xl border border-indigo-500/10 bg-white/[0.03] p-5">
+                    <p className="font-sans text-[10px] font-black uppercase tracking-[0.16em] text-brandOrange">
+                      Insights
+                    </p>
+                    <p className="mt-3 font-display text-2xl font-light leading-tight text-textMain">
+                      Strategy, proof, and growth signals.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    {[
+                      { label: 'Case Studies', href: '#case-studies', desc: 'Real outcomes' },
+                      { label: 'Insights', href: '#insights', desc: 'Ideas and frameworks' },
+                      { label: 'Blog', href: '#', desc: 'Coming soon' },
+                      { label: 'Reports', href: '#', desc: 'Coming soon' },
+                    ].map((dropdownItem) => (
+                      <a
+                        key={dropdownItem.label}
+                        href={dropdownItem.href}
+                        className="group/item rounded-xl border border-transparent px-4 py-3 font-sans transition-all duration-300 hover:border-indigo-500/10 hover:bg-white/[0.04]"
+                      >
+                        <span className="block text-[11px] font-black uppercase tracking-[0.12em] text-slate-300 transition-all duration-300 group-hover/item:text-transparent group-hover/item:bg-clip-text group-hover/item:bg-brand-gradient">
+                          {dropdownItem.label}
+                        </span>
+                        <span className="mt-1 block text-xs font-light text-slate-500 transition-colors duration-300 group-hover/item:text-slate-300">
+                          {dropdownItem.desc}
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
