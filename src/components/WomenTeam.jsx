@@ -10,6 +10,16 @@ gsap.registerPlugin(ScrollTrigger);
 // ─────────────────────────────────────────────────────────────────────────────
 const profiles = [
   {
+    id: 7,
+    photo: '/team/Neha-Sharma.jpeg',
+    name: 'Neha Sharma',
+    role: 'Director - Business Growth',
+    gradientFrom: '#6366f1',
+    gradientTo: '#fda4af',
+    border: 'rgba(99,102,241,0.25)',
+    fit: 'contain',
+  },
+  {
     id: 2,
     photo: '/team/Mounica.png',
     name: 'Monika',
@@ -37,6 +47,24 @@ const profiles = [
     gradientTo: '#fda4af',
     border: 'rgba(219,39,119,0.25)',
     isFounder: true,
+  },
+  {
+    id: 4,
+    photo: '/team/Ayushi.png',
+    name: 'Ayushi',
+    role: 'Marketing Executive',
+    gradientFrom: '#818cf8',
+    gradientTo: '#a5b4fc',
+    border: 'rgba(129,140,248,0.25)',
+  },
+  {
+    id: 6,
+    photo: '/team/Alinkrita.jpg',
+    name: 'Alinkrita',
+    role: 'Chief Happiness Officer',
+    gradientFrom: '#fda4af',
+    gradientTo: '#c084fc',
+    border: 'rgba(253,164,175,0.25)',
   },
 ];
 
@@ -107,11 +135,27 @@ function ProfileCard({ profile }) {
       {/* ── Full-height photo OR gradient placeholder ── */}
       <div className="absolute inset-0">
         {profile.photo ? (
-          <img
-            src={profile.photo}
-            alt={profile.name}
-            className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-          />
+          profile.fit === 'contain' ? (
+            <>
+              <img
+                src={profile.photo}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover object-center scale-110 blur-xl opacity-45"
+              />
+              <img
+                src={profile.photo}
+                alt={profile.name}
+                className="relative z-[1] w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </>
+          ) : (
+            <img
+              src={profile.photo}
+              alt={profile.name}
+              className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+            />
+          )
         ) : (
           <div
             className="w-full h-full relative flex flex-col items-center justify-center"
