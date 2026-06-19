@@ -16,6 +16,7 @@ function App() {
   return (
     <Layout>
       <Hero />
+      <div id="about" className="scroll-mt-28" />
       <WomenTeam />
       <BrandPositioning />
       <Difference />

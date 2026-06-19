@@ -3,6 +3,27 @@ import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import MagneticButton from './MagneticButton';
 import { useTheme } from '../context/ThemeContext';
 
+const servicesMegaItems = [
+  { label: 'AI-Powered Performance Marketing', desc: 'Profitable ad systems', href: '#services' },
+  { label: 'SEO & Organic Growth', desc: 'Authority and search visibility', href: '#services' },
+  { label: 'Branding & Positioning', desc: 'Sharper identity and messaging', href: '#services' },
+  { label: 'Website Design & Conversion', desc: 'Sites built to convert', href: '#services' },
+  { label: 'AI Automation Systems', desc: 'Less manual work, more scale', href: '#services' },
+  { label: 'Social Media Strategy', desc: 'Authority-building content loops', href: '#services' },
+  { label: 'Funnel & Lead Generation', desc: 'Predictable pipeline growth', href: '#services' },
+];
+
+const industriesMegaItems = [
+  { label: 'Startups', desc: 'Early-stage brands scaling fast', href: '#industries' },
+  { label: 'D2C Brands', desc: 'Direct-to-consumer growth systems', href: '#industries' },
+  { label: 'Coaches & Creators', desc: 'Personal brands built to convert', href: '#industries' },
+  { label: 'Clinics & Wellness', desc: 'Trust-driven healthcare marketing', href: '#industries' },
+  { label: 'Fashion & Beauty', desc: 'Aesthetic brands with real ROI', href: '#industries' },
+  { label: 'SaaS Companies', desc: 'B2B and B2C software growth', href: '#industries' },
+  { label: 'Local Businesses', desc: 'Hyperlocal digital domination', href: '#industries' },
+  { label: 'Women-Led Businesses', desc: 'Built with a special heart for you', href: '#industries' },
+];
+
 export default function Header() {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
@@ -50,8 +71,8 @@ export default function Header() {
 </div>
         </a>
 
-        <nav className="hidden md:flex items-center gap-9 bg-surface/35 border border-indigo-500/5 rounded-full px-7 py-1.5 backdrop-blur-2xl shadow-[0_10px_30px_var(--glass-shadow)]">
-          {['About', 'Services', 'Industries'].map((item) => (
+        <nav className="hidden md:flex items-center gap-7 xl:gap-9 bg-surface/35 border border-indigo-500/5 rounded-full px-6 xl:px-7 py-1.5 backdrop-blur-2xl shadow-[0_10px_30px_var(--glass-shadow)]">
+          {['About'].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase().replace(' ', '-')}`}
@@ -61,6 +82,106 @@ export default function Header() {
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-brandBlue to-brandOrange group-hover:w-full transition-all duration-300 rounded-full shadow-[0_0_10px_#6366f1]" />
             </a>
           ))}
+
+          <div className="relative py-1.5 group">
+            <a
+              href="#services"
+              className="text-[11px] font-bold text-slate-300 hover:text-slate-50 transition-colors relative py-1.5 font-sans tracking-[0.14em] uppercase"
+            >
+              Services
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-brandBlue to-brandOrange group-hover:w-full transition-all duration-300 rounded-full shadow-[0_0_10px_#6366f1]" />
+            </a>
+
+            <div className="absolute left-1/2 top-full z-50 w-[760px] max-w-[calc(100vw-3rem)] -translate-x-1/2 translate-y-2 pt-4 opacity-0 pointer-events-none transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto">
+              <div className="relative overflow-hidden rounded-2xl border border-indigo-500/10 bg-surface/85 p-3 shadow-[0_24px_70px_var(--glass-shadow)] backdrop-blur-2xl">
+                <div className="absolute -right-20 -top-20 h-44 w-44 rounded-full bg-brandOrange/10 blur-3xl" />
+                <div className="absolute -bottom-20 -left-20 h-44 w-44 rounded-full bg-brandBlue/10 blur-3xl" />
+
+                <div className="relative grid grid-cols-[220px_1fr] gap-3">
+                  <a href="#services" className="group/card relative min-h-[250px] overflow-hidden rounded-2xl border border-indigo-500/10 bg-[#050713]/40">
+                    <img
+                      src="/bg_funnel_2026.png"
+                      alt=""
+                      className="absolute inset-0 h-full w-full object-cover opacity-45 transition-transform duration-700 group-hover/card:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 p-5">
+                      <p className="font-sans text-[10px] font-black uppercase tracking-[0.16em] text-brandOrange">Services</p>
+                      <p className="mt-3 font-display text-3xl font-light leading-tight text-textMain">Growth systems built to convert.</p>
+                    </div>
+                  </a>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    {servicesMegaItems.map((service) => (
+                      <a
+                        key={service.label}
+                        href={service.href}
+                        className="group/item rounded-xl border border-transparent px-4 py-3 font-sans transition-all duration-300 hover:border-indigo-500/10 hover:bg-white/[0.04]"
+                        aria-label={`${service.label} - ${service.desc}`}
+                      >
+                        <span className="block text-[11px] font-black uppercase tracking-[0.1em] text-slate-300 transition-all duration-300 group-hover/item:text-transparent group-hover/item:bg-clip-text group-hover/item:bg-brand-gradient">
+                          {service.label}
+                        </span>
+                        <span className="mt-1 block text-xs font-light text-slate-500 transition-colors duration-300 group-hover/item:text-slate-300">
+                          {service.desc}
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative py-1.5 group">
+            <a
+              href="#industries"
+              className="text-[11px] font-bold text-slate-300 hover:text-slate-50 transition-colors relative py-1.5 font-sans tracking-[0.14em] uppercase"
+            >
+              Industries
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-brandBlue to-brandOrange group-hover:w-full transition-all duration-300 rounded-full shadow-[0_0_10px_#6366f1]" />
+            </a>
+
+            <div className="absolute left-1/2 top-full z-50 w-[760px] max-w-[calc(100vw-3rem)] -translate-x-1/2 translate-y-2 pt-4 opacity-0 pointer-events-none transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto">
+              <div className="relative overflow-hidden rounded-2xl border border-indigo-500/10 bg-surface/85 p-3 shadow-[0_24px_70px_var(--glass-shadow)] backdrop-blur-2xl">
+                <div className="absolute -right-20 -top-20 h-44 w-44 rounded-full bg-brandBlue/10 blur-3xl" />
+                <div className="absolute -bottom-20 -left-20 h-44 w-44 rounded-full bg-brandOrange/10 blur-3xl" />
+
+                <div className="relative grid grid-cols-[220px_1fr] gap-3">
+                  <a href="#industries" className="group/card relative min-h-[270px] overflow-hidden rounded-2xl border border-indigo-500/10 bg-[#050713]/40">
+                    <img
+                      src="/bg_feminine_2026.png"
+                      alt=""
+                      className="absolute inset-0 h-full w-full object-cover opacity-45 transition-transform duration-700 group-hover/card:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 p-5">
+                      <p className="font-sans text-[10px] font-black uppercase tracking-[0.16em] text-brandBlue">Industries</p>
+                      <p className="mt-3 font-display text-3xl font-light leading-tight text-textMain">Built for ambitious brands.</p>
+                    </div>
+                  </a>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    {industriesMegaItems.map((industry) => (
+                      <a
+                        key={industry.label}
+                        href={industry.href}
+                        className="group/item rounded-xl border border-transparent px-4 py-3 font-sans transition-all duration-300 hover:border-indigo-500/10 hover:bg-white/[0.04]"
+                        aria-label={`${industry.label} - ${industry.desc}`}
+                      >
+                        <span className="block text-[11px] font-black uppercase tracking-[0.1em] text-slate-300 transition-all duration-300 group-hover/item:text-transparent group-hover/item:bg-clip-text group-hover/item:bg-brand-gradient">
+                          {industry.label}
+                        </span>
+                        <span className="mt-1 block text-xs font-light text-slate-500 transition-colors duration-300 group-hover/item:text-slate-300">
+                          {industry.desc}
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="relative py-1.5 group">
             <a
