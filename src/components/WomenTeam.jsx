@@ -38,15 +38,6 @@ const profiles = [
     border: 'rgba(219,39,119,0.25)',
     isFounder: true,
   },
-  {
-    id: 4,
-    photo: '/team/Ayushi.png',
-    name: 'Ayushi',
-    role: 'Marketing Executive',
-    gradientFrom: '#818cf8',
-    gradientTo: '#a5b4fc',
-    border: 'rgba(129,140,248,0.25)',
-  },
 ];
 
 // ─── Minimal profile card: full photo + name + role ───────────────────────────
