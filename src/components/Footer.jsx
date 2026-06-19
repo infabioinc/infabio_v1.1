@@ -62,11 +62,11 @@ export default function Footer() {
                   )
                 },
                 {
-                  name: 'x',
-                  url: 'https://x.com/TheInfabio',
+                  name: 'facebook',
+                  url: 'https://www.facebook.com/theinfabio',
                   icon: (
-                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.23.2 2.23.2v2.46h-1.25c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22C18.34 21.24 22 17.08 22 12.06z"/>
                     </svg>
                   )
                 },
@@ -80,13 +80,23 @@ export default function Footer() {
                       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                     </svg>
                   )
+                },
+                {
+                  name: 'gmail',
+                  url: 'mailto:hello@infabio.com',
+                  icon: (
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                      <path d="M4 6h16a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z" />
+                      <path d="M22 8l-10 6L2 8" />
+                    </svg>
+                  )
                 }
               ].map(s => (
                 <motion.a
                   key={s.name}
                   href={s.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={s.url.startsWith('mailto:') ? undefined : '_blank'}
+                  rel={s.url.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-slate-400 hover:bg-[#6366f1] hover:border-[#6366f1] hover:text-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(99,102,241,0.3)]"
@@ -177,16 +187,7 @@ export default function Footer() {
                   <p className="text-xs text-slate-500 font-sans font-light">Creative Division</p>
                 </div>
               </li>
-              <li className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-[#6366f1] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <div>
-                  <p className="text-sm font-sans font-medium text-slate-300">New York, USA</p>
-                  <p className="text-xs text-slate-500 font-sans font-light">Global Expansion HQ</p>
-                </div>
-              </li>
+              
             </ul>
           </div>
 
@@ -195,12 +196,7 @@ export default function Footer() {
         {/* BOTTOM METADATA & COPYRIGHT BAR */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-slate-400">
-            <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            <a href="mailto:contact@marketingdefense.com" className="text-sm hover:text-white transition-colors font-sans font-light">
-              contact@marketingdefense.com
-            </a>
+            
           </div>
 
           <p className="text-xs text-slate-500 font-sans font-light">

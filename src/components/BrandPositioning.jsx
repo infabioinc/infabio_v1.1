@@ -81,7 +81,7 @@ function AnimatedWord({ word, delay }) {
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
-      className="inline-block mr-[0.28em]"
+      className="inline-block mr-[0.28em] whitespace-nowrap"
     >
       {word}
     </motion.span>
@@ -94,7 +94,7 @@ export default function BrandPositioning() {
   const blobY  = useTransform(scrollYProgress, [0, 1], [-60, 60]);
   const blobY2 = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
-  const headlineWords = ['Marketing', "doesn't", 'need', 'bigger', 'budgets.', 'It', 'needs', 'smarter', 'decisions.'];
+  const headlineWords = ["Marketing doesn't need bigger budgets.", 'It', 'needs', 'smarter', 'decisions.'];
 
   return (
     <section ref={sectionRef} className="section-slate py-28 relative overflow-hidden bg-transparent" id="brand-positioning">
@@ -105,19 +105,21 @@ export default function BrandPositioning() {
       <div className="container mx-auto relative z-10 px-6">
 
         {/* Word-by-word headline */}
-        <div className="max-w-4xl mb-20 text-left">
+        <div className="max-w-7xl mb-20 text-left">
           <span className="eyebrow mb-6 inline-block">Our Philosophy</span>
           <h2 className="text-5.5xl md:text-7xl font-display font-light text-white leading-tight mt-4 mb-6">
-            {headlineWords.map((word, i) => {
-              const isGradient = i >= 5;
-              return (
-                <AnimatedWord
-                  key={i}
-                  word={<span className={isGradient ? 'text-brand italic font-normal' : ''}>{word}</span>}
-                  delay={i * 0.07}
-                />
-              );
-            })}
+            <AnimatedWord
+              word={<span>{headlineWords[0]}</span>}
+              delay={0}
+            />
+            <br />
+            {headlineWords.slice(1).map((word, i) => (
+              <AnimatedWord
+                key={word}
+                word={<span className="text-brand italic font-normal">{word}</span>}
+                delay={(i + 1) * 0.07}
+              />
+            ))}
           </h2>
           <motion.div
             initial={{ scaleX: 0, originX: 0 }}

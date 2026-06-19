@@ -93,7 +93,7 @@ export default function Header() {
             </a>
 
             <div className="absolute left-1/2 top-full z-50 w-[760px] max-w-[calc(100vw-3rem)] -translate-x-1/2 translate-y-2 pt-4 opacity-0 pointer-events-none transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto">
-              <div className="relative overflow-hidden rounded-2xl border border-indigo-500/10 bg-surface/85 p-3 shadow-[0_24px_70px_var(--glass-shadow)] backdrop-blur-2xl">
+              <div className={`relative overflow-hidden rounded-2xl border border-indigo-500/10 p-3 shadow-[0_24px_70px_var(--glass-shadow)] ${theme === 'light' ? 'bg-white' : 'bg-[#030508]'}`}>
                 <div className="absolute -right-20 -top-20 h-44 w-44 rounded-full bg-brandOrange/10 blur-3xl" />
                 <div className="absolute -bottom-20 -left-20 h-44 w-44 rounded-full bg-brandBlue/10 blur-3xl" />
 
@@ -143,7 +143,7 @@ export default function Header() {
             </a>
 
             <div className="absolute left-1/2 top-full z-50 w-[760px] max-w-[calc(100vw-3rem)] -translate-x-1/2 translate-y-2 pt-4 opacity-0 pointer-events-none transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto">
-              <div className="relative overflow-hidden rounded-2xl border border-indigo-500/10 bg-surface/85 p-3 shadow-[0_24px_70px_var(--glass-shadow)] backdrop-blur-2xl">
+              <div className={`relative overflow-hidden rounded-2xl border border-indigo-500/10 p-3 shadow-[0_24px_70px_var(--glass-shadow)] ${theme === 'light' ? 'bg-white' : 'bg-[#030508]'}`}>
                 <div className="absolute -right-20 -top-20 h-44 w-44 rounded-full bg-brandBlue/10 blur-3xl" />
                 <div className="absolute -bottom-20 -left-20 h-44 w-44 rounded-full bg-brandOrange/10 blur-3xl" />
 
@@ -193,7 +193,7 @@ export default function Header() {
             </a>
 
             <div className="absolute left-1/2 top-full z-50 w-[520px] max-w-[calc(100vw-3rem)] -translate-x-1/2 translate-y-2 pt-4 opacity-0 pointer-events-none transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto">
-              <div className="relative overflow-hidden rounded-2xl border border-indigo-500/10 bg-surface/85 p-3 shadow-[0_24px_70px_var(--glass-shadow)] backdrop-blur-2xl">
+              <div className={`relative overflow-hidden rounded-2xl border border-indigo-500/10 p-3 shadow-[0_24px_70px_var(--glass-shadow)] ${theme === 'light' ? 'bg-white' : 'bg-[#030508]'}`}>
                 <div className="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-brandOrange/10 blur-3xl" />
                 <div className="absolute -bottom-16 -left-16 h-36 w-36 rounded-full bg-brandBlue/10 blur-3xl" />
 

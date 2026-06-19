@@ -19,15 +19,6 @@ const profiles = [
     border: 'rgba(253,164,175,0.25)',
   },
   {
-    id: 3,
-    photo: '/team/priyanka.png',
-    name: 'Priyanka',
-    role: 'Frontend Executive',
-    gradientFrom: '#c084fc',
-    gradientTo: '#e9d5ff',
-    border: 'rgba(192,132,252,0.25)',
-  },
-  {
     id: 1,
     photo: '/team/chhavi.jpeg',
     name: 'Chhavi',

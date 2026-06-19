@@ -399,7 +399,7 @@ export default function Hero() {
                 <HolographicRadar />
               </div>
 
-              <div className="w-full relative z-10 transform translate-y-3 hover:translate-y-0 transition-all duration-700 ease-[0.16,1,0.3,1]">
+              <div className="w-full relative z-10 transform -translate-y-20 hover:-translate-y-24 transition-all duration-700 ease-[0.16,1,0.3,1]">
                 <StatsDashboard />
               </div>
             </div>

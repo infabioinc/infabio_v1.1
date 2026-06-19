@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import MagneticButton from './MagneticButton';
 import SpotlightCard from './SpotlightCard';
@@ -39,8 +38,6 @@ const deck = [
 ];
 
 export default function Founders() {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <section className="section-slate py-32 relative overflow-hidden bg-transparent" id="founders">
       {/* Soft atmospheric background lights */}
@@ -85,12 +82,8 @@ export default function Founders() {
             </div>
 
             {/* RIGHT COLUMN: Interactive 3D Fanned Card Deck — Spans 6 cols */}
-            <div
-              className="lg:col-span-6 flex justify-center items-center min-h-[460px] relative"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <div className="relative w-[300px] h-[340px] flex items-center justify-center">
+            <div className="lg:col-span-6 flex justify-center items-center relative">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full max-w-[560px]">
                 
                 {deck.map((card, i) => {
                   const strokeColor = card.color === 'orange' ? 'rgba(253,164,175,0.3)' : 'rgba(99,102,241,0.3)';
@@ -99,29 +92,19 @@ export default function Founders() {
                   return (
                     <motion.div
                       key={card.title}
-                      className="absolute w-full h-full cursor-pointer will-change-transform text-left"
-                      animate={{
-                        x: isHovered ? card.xOffset : 0,
-                        y: isHovered ? -15 : 0,
-                        rotate: isHovered ? card.hoverRotation : card.rotation,
-                        zIndex: 10 + i,
-                      }}
-                      transition={{
-                        type: 'spring',
-                        stiffness: 70,
-                        damping: 15,
-                        mass: 0.8,
-                      }}
+                      className="cursor-pointer will-change-transform text-left"
+                      initial={{ opacity: 0, y: 24 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
                     >
                       <SpotlightCard
                         glowColor={card.color === 'orange' ? 'rgba(253,164,175,0.22)' : 'rgba(99,102,241,0.22)'}
                         tiltStrength={6}
-                        className="w-full h-full bg-[#050713]/90 backdrop-blur-2xl rounded-3xl p-8 flex flex-col justify-between select-none relative"
+                        className="min-h-[235px] bg-[#050713]/90 backdrop-blur-2xl rounded-3xl p-6 flex flex-col justify-between select-none relative transition-all duration-300 hover:-translate-y-1"
                         style={{
-                          border: `1px solid ${isHovered ? strokeColor : 'rgba(255,255,255,0.06)'}`,
-                          boxShadow: isHovered
-                            ? `0 15px 35px ${activeGlow}, 0 20px 45px rgba(0,0,0,0.5)`
-                            : '0 8px 30px rgba(0,0,0,0.4)',
+                          border: `1px solid ${strokeColor}`,
+                          boxShadow: `0 12px 32px ${activeGlow}, 0 14px 34px rgba(0,0,0,0.35)`,
                         }}
                       >
                         <div>
