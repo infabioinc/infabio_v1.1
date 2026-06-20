@@ -66,6 +66,15 @@ const profiles = [
     gradientTo: '#c084fc',
     border: 'rgba(253,164,175,0.25)',
   },
+  {
+    id: 8,
+    photo: '/team/Sia-Singh.jpeg',
+    name: 'Sia Singh',
+    role: 'Social Media Manager',
+    gradientFrom: '#6366f1',
+    gradientTo: '#fda4af',
+    border: 'rgba(99,102,241,0.25)',
+  },
 ];
 
 // ─── Minimal profile card: full photo + name + role ───────────────────────────
