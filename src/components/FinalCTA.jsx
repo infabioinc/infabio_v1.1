@@ -59,7 +59,7 @@ export default function FinalCTA() {
 
           <div className="flex flex-wrap justify-center gap-6 pt-6">
             <motion.a
-              href="mailto:hello@infabio.com"
+              href="/contact"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
               className="btn-primary text-sm px-10 py-5 shadow-[0_15px_30px_rgba(99,102,241,0.25)] rounded-xl font-bold uppercase tracking-wider"
@@ -67,7 +67,7 @@ export default function FinalCTA() {
               Book a Free Consultation →
             </motion.a>
             <motion.a
-              href="#services"
+              href="/services"
               whileHover={{ scale: 1.03, y: -1 }}
               whileTap={{ scale: 0.99 }}
               className="btn-secondary text-sm px-10 py-5 rounded-xl font-bold uppercase tracking-wider border border-white/10 bg-white/[0.03]"

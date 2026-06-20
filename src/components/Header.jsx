@@ -1,33 +1,35 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import MagneticButton from './MagneticButton';
 import { useTheme } from '../context/ThemeContext';
+import { Menu, X } from 'lucide-react';
 
 const servicesMegaItems = [
-  { label: 'AI-Powered Performance Marketing', desc: 'Profitable ad systems', href: '#services' },
-  { label: 'SEO & Organic Growth', desc: 'Authority and search visibility', href: '#services' },
-  { label: 'Branding & Positioning', desc: 'Sharper identity and messaging', href: '#services' },
-  { label: 'Website Design & Conversion', desc: 'Sites built to convert', href: '#services' },
-  { label: 'AI Automation Systems', desc: 'Less manual work, more scale', href: '#services' },
-  { label: 'Social Media Strategy', desc: 'Authority-building content loops', href: '#services' },
-  { label: 'Funnel & Lead Generation', desc: 'Predictable pipeline growth', href: '#services' },
+  { label: 'AI-Powered Performance Marketing', desc: 'Profitable ad systems', href: '/services#services' },
+  { label: 'SEO & Organic Growth', desc: 'Authority and search visibility', href: '/services#services' },
+  { label: 'Branding & Positioning', desc: 'Sharper identity and messaging', href: '/services#services' },
+  { label: 'Website Design & Conversion', desc: 'Sites built to convert', href: '/services#services' },
+  { label: 'AI Automation Systems', desc: 'Less manual work, more scale', href: '/services#services' },
+  { label: 'Social Media Strategy', desc: 'Authority-building content loops', href: '/services#services' },
+  { label: 'Funnel & Lead Generation', desc: 'Predictable pipeline growth', href: '/services#services' },
 ];
 
 const industriesMegaItems = [
-  { label: 'Startups', desc: 'Early-stage brands scaling fast', href: '#industries' },
-  { label: 'D2C Brands', desc: 'Direct-to-consumer growth systems', href: '#industries' },
-  { label: 'Coaches & Creators', desc: 'Personal brands built to convert', href: '#industries' },
-  { label: 'Clinics & Wellness', desc: 'Trust-driven healthcare marketing', href: '#industries' },
-  { label: 'Fashion & Beauty', desc: 'Aesthetic brands with real ROI', href: '#industries' },
-  { label: 'SaaS Companies', desc: 'B2B and B2C software growth', href: '#industries' },
-  { label: 'Local Businesses', desc: 'Hyperlocal digital domination', href: '#industries' },
-  { label: 'Women-Led Businesses', desc: 'Built with a special heart for you', href: '#industries' },
+  { label: 'Startups', desc: 'Early-stage brands scaling fast', href: '/industries#industries' },
+  { label: 'D2C Brands', desc: 'Direct-to-consumer growth systems', href: '/industries#industries' },
+  { label: 'Coaches & Creators', desc: 'Personal brands built to convert', href: '/industries#industries' },
+  { label: 'Clinics & Wellness', desc: 'Trust-driven healthcare marketing', href: '/industries#industries' },
+  { label: 'Fashion & Beauty', desc: 'Aesthetic brands with real ROI', href: '/industries#industries' },
+  { label: 'SaaS Companies', desc: 'B2B and B2C software growth', href: '/industries#industries' },
+  { label: 'Local Businesses', desc: 'Hyperlocal digital domination', href: '/industries#industries' },
+  { label: 'Women-Led Businesses', desc: 'Built with a special heart for you', href: '/industries#industries' },
 ];
 
 export default function Header() {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -59,7 +61,7 @@ export default function Header() {
       )}
 
       <div className="container mx-auto px-6 h-[64px] flex items-center justify-between">
-        <a href="#" className="flex items-center group relative" aria-label="Infabio home">
+        <a href="/" className="flex items-center group relative" aria-label="Infabio home">
           <div className="relative flex items-center shrink-0">
   <div className="absolute -inset-5 bg-gradient-to-r from-cyan-300/25 via-pink-300/25 to-yellow-200/25 blur-2xl rounded-full" />
 
@@ -75,7 +77,7 @@ export default function Header() {
           {['About'].map((item) => (
             <a
               key={item}
-              href={`#${item.toLowerCase().replace(' ', '-')}`}
+              href={`/${item.toLowerCase().replace(' ', '-')}`}
               className="text-[11px] font-bold text-slate-300 hover:text-slate-50 transition-colors relative py-1.5 group font-sans tracking-[0.14em] uppercase"
             >
               {item}
@@ -85,7 +87,7 @@ export default function Header() {
 
           <div className="relative py-1.5 group">
             <a
-              href="#services"
+              href="/services"
               className="text-[11px] font-bold text-slate-300 hover:text-slate-50 transition-colors relative py-1.5 font-sans tracking-[0.14em] uppercase"
             >
               Services
@@ -98,7 +100,7 @@ export default function Header() {
                 <div className="absolute -bottom-20 -left-20 h-44 w-44 rounded-full bg-brandBlue/10 blur-3xl" />
 
                 <div className="relative grid grid-cols-[220px_1fr] gap-3">
-                  <a href="#services" className="group/card relative min-h-[250px] overflow-hidden rounded-2xl border border-indigo-500/10 bg-[#050713]/40">
+                  <a href="/services" className="group/card relative min-h-[250px] overflow-hidden rounded-2xl border border-indigo-500/10 bg-[#050713]/40">
                     <img
                       src="/bg_funnel_2026.png"
                       alt=""
@@ -135,7 +137,7 @@ export default function Header() {
 
           <div className="relative py-1.5 group">
             <a
-              href="#industries"
+              href="/industries"
               className="text-[11px] font-bold text-slate-300 hover:text-slate-50 transition-colors relative py-1.5 font-sans tracking-[0.14em] uppercase"
             >
               Industries
@@ -148,7 +150,7 @@ export default function Header() {
                 <div className="absolute -bottom-20 -left-20 h-44 w-44 rounded-full bg-brandOrange/10 blur-3xl" />
 
                 <div className="relative grid grid-cols-[220px_1fr] gap-3">
-                  <a href="#industries" className="group/card relative min-h-[270px] overflow-hidden rounded-2xl border border-indigo-500/10 bg-[#050713]/40">
+                  <a href="/industries" className="group/card relative min-h-[270px] overflow-hidden rounded-2xl border border-indigo-500/10 bg-[#050713]/40">
                     <img
                       src="/bg_feminine_2026.png"
                       alt=""
@@ -185,7 +187,7 @@ export default function Header() {
 
           <div className="relative py-1.5 group">
             <a
-              href="#insights"
+              href="/insights"
               className="text-[11px] font-bold text-slate-300 hover:text-slate-50 transition-colors relative py-1.5 font-sans tracking-[0.14em] uppercase"
             >
               Insights
@@ -209,8 +211,8 @@ export default function Header() {
 
                   <div className="grid grid-cols-2 gap-2">
                     {[
-                      { label: 'Case Studies', href: '#case-studies', desc: 'Real outcomes' },
-                      { label: 'Insights', href: '#insights', desc: 'Ideas and frameworks' },
+                      { label: 'Case Studies', href: '/insights#case-studies', desc: 'Real outcomes' },
+                      { label: 'Insights', href: '/insights', desc: 'Ideas and frameworks' },
                       { label: 'Blog', href: '#', desc: 'Coming soon' },
                       { label: 'Reports', href: '#', desc: 'Coming soon' },
                     ].map((dropdownItem) => (
@@ -256,15 +258,35 @@ export default function Header() {
 
           <MagneticButton>
             <a
-  href="#contact"
+  href="/contact"
   className="hidden lg:inline-flex btn-primary whitespace-nowrap text-[9px] xl:text-[10px] 2xl:text-[11px] font-black uppercase tracking-[0.08em] xl:tracking-[0.12em] px-4 xl:px-6 py-2 rounded-full shadow-[0_0_20px_rgba(99,102,241,0.25)] hover:shadow-[0_0_30px_rgba(99,102,241,0.4)]"
 >
   
               Maximize Results & Minimize Marketing Budget
             </a>
           </MagneticButton>
+
+          <button
+            type="button"
+            onClick={() => setMobileOpen((open) => !open)}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-indigo-500/10 bg-surface/60 text-textMain md:hidden"
+            aria-label={mobileOpen ? 'Close navigation' : 'Open navigation'}
+            aria-expanded={mobileOpen}
+          >
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
+
+      {mobileOpen && (
+        <nav className={`mx-4 mb-3 rounded-2xl border border-indigo-500/10 p-3 shadow-[0_20px_50px_var(--glass-shadow)] md:hidden ${theme === 'light' ? 'bg-white' : 'bg-[#030508]'}`}>
+          {[
+            ['About', '/about'], ['Services', '/services'], ['Industries', '/industries'], ['Insights', '/insights'], ['Contact', '/contact'],
+          ].map(([label, href]) => (
+            <a key={label} href={href} className="block rounded-xl px-4 py-3 font-sans text-xs font-bold uppercase tracking-widest text-textBody hover:bg-surfaceElevated hover:text-textMain">{label}</a>
+          ))}
+        </nav>
+      )}
     </motion.header>
   );
 }

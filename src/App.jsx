@@ -11,10 +11,15 @@ import Results from './components/Results';
 import FounderMessage from './components/FounderMessage';
 import WomenTeam from './components/WomenTeam';
 import FinalCTA from './components/FinalCTA';
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import IndustriesPage from './pages/IndustriesPage';
+import InsightsPage from './pages/InsightsPage';
+import ContactPage from './pages/ContactPage';
 
-function App() {
+function HomePage() {
   return (
-    <Layout>
+    <>
       <Hero />
       <div id="about" className="scroll-mt-28" />
       <WomenTeam />
@@ -30,8 +35,21 @@ function App() {
       <Results />
       <FounderMessage />
       <FinalCTA />
-    </Layout>
+    </>
   );
+}
+
+const pages = {
+  '/about': AboutPage,
+  '/services': ServicesPage,
+  '/industries': IndustriesPage,
+  '/insights': InsightsPage,
+  '/contact': ContactPage,
+};
+
+function App() {
+  const Page = pages[window.location.pathname.replace(/\/$/, '') || '/'] || HomePage;
+  return <Layout><Page /></Layout>;
 }
 
 export default App;

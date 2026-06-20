@@ -124,7 +124,7 @@ export default function Footer() {
               ].map(item => (
                 <li key={item}>
                   <a
-                    href="#services"
+                    href="/services"
                     className="text-sm text-slate-400 hover:text-white transition-colors relative group py-1 inline-block"
                   >
                     {item}
@@ -142,15 +142,15 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4 font-sans font-light">
               {[
-                'About Us',
-                'Case Studies',
-                'Insights',
-                'Careers',
-                'Contact',
-              ].map(item => (
+                ['About Us', '/about'],
+                ['Case Studies', '/insights#case-studies'],
+                ['Insights', '/insights'],
+                ['Careers', '/about#team'],
+                ['Contact', '/contact'],
+              ].map(([item, href]) => (
                 <li key={item}>
                   <a
-                    href="#"
+                    href={href}
                     className="text-sm text-slate-400 hover:text-white transition-colors relative group py-1 inline-block"
                   >
                     {item}

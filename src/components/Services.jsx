@@ -284,7 +284,7 @@ export default function Services() {
                       
                       <div className="flex items-center gap-4">
                         <a
-                          href="#contact"
+                          href="/contact"
                           className="btn-primary text-xs px-6 py-3 rounded-xl uppercase tracking-wider font-bold inline-block"
                         >
                           Book Free Strategy Call →
@@ -329,7 +329,7 @@ export default function Services() {
             </div>
 
             <a
-              href="#contact"
+              href="/contact"
               className="btn-primary text-xs px-8 py-4 rounded-xl uppercase tracking-wider font-bold relative z-10 shadow-[0_0_15px_rgba(99,102,241,0.25)] flex-shrink-0"
             >
               Book Free Call →

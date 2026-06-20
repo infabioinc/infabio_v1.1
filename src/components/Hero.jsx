@@ -359,12 +359,12 @@ export default function Hero() {
                 className="flex flex-wrap gap-5 pt-3"
               >
                 <MagneticButton className="flex items-center justify-center">
-                  <a href="#contact" className="btn-primary text-xs px-9 py-4 rounded-2xl shadow-[0_0_30px_rgba(99,102,241,0.25)] uppercase tracking-widest font-black">
+                  <a href="/contact" className="btn-primary text-xs px-9 py-4 rounded-2xl shadow-[0_0_30px_rgba(99,102,241,0.25)] uppercase tracking-widest font-black">
                     Book Free Strategy Call
                   </a>
                 </MagneticButton>
                 <MagneticButton className="flex items-center justify-center">
-                  <a href="#services" className="btn-secondary text-xs px-9 py-4 rounded-2xl border border-white/5 hover:border-white/15 uppercase tracking-widest font-black">
+                  <a href="/services" className="btn-secondary text-xs px-9 py-4 rounded-2xl border border-white/5 hover:border-white/15 uppercase tracking-widest font-black">
                     Let's Grow Your Brand →
                   </a>
                 </MagneticButton>
